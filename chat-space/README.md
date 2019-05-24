@@ -23,5 +23,6 @@ Things you may want to cover:
 
 * ...
 meesage table
+
 |id|Text|image_url|user_id|group_id|
 |------|----|-------|
