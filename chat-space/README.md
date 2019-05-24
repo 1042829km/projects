@@ -28,9 +28,9 @@ message
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
 | text       | text        | null: false        |
-| image      | string      | null: false        |
-| group_id   | integer     | null: fales        |
-| user_id    | integer     | null: false        |
+| image      | string      |                    |
+| group_id   | integer     | foreign_key: true  |
+| user_id    | integer     | foreign_key: true  |
 
 user
 
