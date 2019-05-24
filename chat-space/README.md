@@ -23,11 +23,6 @@ Things you may want to cover:
 
 * ...
 
-| Left align | Right align | Center align |
+| text | image | group id | user id |
 |:-----------|------------:|:------------:|
-| This       | This        | This         |
-| column     | column      | column       |
-| will       | will        | will         |
-| be         | be          | be           |
-| left       | right       | center       |
-| aligned    | aligned     | aligned      |
+
