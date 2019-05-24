@@ -23,6 +23,36 @@ Things you may want to cover:
 
 * ...
 
-| text | image | group id | user id |
-|:-----------|------------:|:------------:|
+message
+
+| column     |   Type      | options            |
+|:-----------|------------:|:------------------:|
+| text       | text        | null: false        |
+| image      | string      | null: false        |
+| group_id   | integer     | null: fales        |
+| user_id    | integer     | null: false        |
+
+user
+
+| column     |   Type      | options            |
+|:-----------|------------:|:------------------:|
+| name       |  string     | null: false        |
+| group_id   | integer     | null: false        |
+| group_name | string      | null: false        |
+| text_id    | integer     | null: false        |
+
+group
+
+| column     |   Type      | options            |
+|:-----------|------------:|:------------------:|
+| group_name | string      | null: false        |
+| user_id    | integer     | null: false        |
+| message_id | text        | null: false        |
+
+group_user
+
+| column     |   Type      | options            |
+|:-----------|------------:|:------------------:|
+| group_id   | integer     | null: false        |
+| user_id    | integer     | null: false        |
 
