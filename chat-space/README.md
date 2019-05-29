@@ -44,7 +44,8 @@ users
 
 ### Asociation
 - has_many :messages
-- has_many :groups, through: :group_user
+- has_many :groups, through: :group_users
+- has_many :group_users
 
 groups
 
@@ -53,8 +54,9 @@ groups
 |       name | string      | null: false        |
 
 ### Asociation
-- has_many :users, through: :group_user
+- has_many :users, through: :group_users
 - has_many :messages
+- has_many :group_users
 
 
 group_users
