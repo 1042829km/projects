@@ -47,6 +47,9 @@ users
 - has_many :groups, through: :group_users
 - has_many :group_users
 
+### index
+ index :true
+
 groups
 
 | column     |   Type      | options            |
