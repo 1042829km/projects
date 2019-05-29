@@ -32,21 +32,21 @@ messages
 | group_id   | integer     | foreign_key: true  |
 | user_id    | integer     | foreign_key: true  |
 
-user
+users
 
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
 | name       |  string     | null: false        |
 
 
-group
+groups
 
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
 |       name | string      | null: false        |
 
 
-group_user
+group_users
 
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
