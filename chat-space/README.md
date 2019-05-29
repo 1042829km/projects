@@ -32,18 +32,29 @@ messages
 | group_id   | integer     | foreign_key: true  |
 | user_id    | integer     | foreign_key: true  |
 
+### Asociation
+- belongs_to :group
+- belongs_to :user
+
 users
 
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
 | name       |  string     | null: false        |
 
+### Asociation
+- has_many :messages
+- has_many :groups, through: :group_user
 
 groups
 
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
 |       name | string      | null: false        |
+
+### Asociation
+- has_many :users, through: :group_user
+- has_many :messages
 
 
 group_users
@@ -52,3 +63,7 @@ group_users
 |:-----------|------------:|:------------------:|
 | group_id   | integer     | foreign_key: true  |
 | user_id    | integer     | foreign_key: true  |
+
+### Asociation
+- belongs_to :group
+- belongs_to :user
