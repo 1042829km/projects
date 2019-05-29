@@ -23,11 +23,11 @@ Things you may want to cover:
 
 * ...
 
-message
+messages
 
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
-| text       | text        | null: false        |
+| text       | text        |                    |
 | image      | string      |                    |
 | group_id   | integer     | foreign_key: true  |
 | user_id    | integer     | foreign_key: true  |
@@ -43,7 +43,7 @@ group
 
 | column     |   Type      | options            |
 |:-----------|------------:|:------------------:|
-| group_name | string      | null: false        |
+|       name | string      | null: false        |
 
 
 group_user
