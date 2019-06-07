@@ -1,6 +1,6 @@
-class CreateGroups < ActiveRecord::Migration[5.0]
+class CreateUsers < ActiveRecord::Migration[5.0]
   def change
-    create_table :groups do |t|
+    create_table :users do |t|
       t.string :name, null: false
       t.timestamps
     end
