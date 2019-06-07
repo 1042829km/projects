@@ -6,10 +6,10 @@
         gg
       %ul.side_header__user_menu
         %li.user_menu__edit_user
-          %a{ :href => '/groups/new'}
+          = link_to root_path do
             %i.fa.fa-edit
         %li.user_menu__new_group
-          %a{ :href => '/users/729/edit'}
+          = link_to ,root_path do
             %i.fa.fa-cog
     .groups
       = render 'group'
@@ -22,7 +22,7 @@
           Member : 
           %li.current_group__member_list--member
             gg
-      %a{ :href => "groups/1552/edit"}
+      %a{ href: "#"}
         .current_group__main_header_edit_btn
           Edit
     .messages
@@ -30,13 +30,13 @@
       = render 'message2'
       = render 'message3'
     .form
-      %form.new-message{"accept-charset" => "UTF-8", :action => "/groups/1552/messages", :enctype => "multipart/form-data", :method => "post"}
-        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-        %input{:name => "authenticity_token", :type => "hidden", :value => "tFhRzz4CfB4sGRZvfbLGg7kEsI3e64S0jl/G5tl+V4ecwzyTxilvW5XRDOgCgmxsQ6gH0FOlB5RWM6c5FV1TWA=="}/
+      %form.new-message{accept_charset: "UTF-8", action: "/groups/1552/messages", enctype: "multipart/form-data", method: "post"}
+        %input{name: "utf8", type: "hidden", value: "✓"}
+        %input{name: "authenticity_token", type: "hidden", value: "tFhRzz4CfB4sGRZvfbLGg7kEsI3e64S0jl/G5tl+V4ecwzyTxilvW5XRDOgCgmxsQ6gH0FOlB5RWM6c5FV1TWA=="}
         .input_box
-          %input.input_box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}
-          %label.input_box__image_label{:for => "message_image"}
+          %input.input_box__text{name: "message[content]", placeholder: "type a message", type: "text"}
+          %label.input_box__image_label{for: "message_image"}
             %i.input_box__image_label--fa.fa-image
-            %input.input_box__image_label--input{:name => "message[image]", :id => "message_image", :type => "file"}
-        %input.input_box__new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+            %input.input_box__image_label--input{name: "message[image]", id: "message_image", type: "file"}
+        %input.input_box__new-message__submit-btn{data_disable_with: "Send", name: "commit", type: "submit", value: "Send"}
 
