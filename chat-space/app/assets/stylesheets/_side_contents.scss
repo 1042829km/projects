@@ -3,7 +3,6 @@
   color: white;
   float: left;
 }
-
 .side_header {
   background-color: #253141;
   height: 100px;
@@ -12,49 +11,43 @@
   justify-content: space-between;
   font-weight: bold;
   display: flex;
+
+  &__user_menu {
+    display: flex;
+
+    li {
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      line-height: 100px;
+      margin-left: 0.3rem;
+
+      .i .fa{
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        padding: 10px;
+      }
+    }
+  }
 }
 
-%a {
-  text-decoration: none;
-}
-
-%p{
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  line-height: 100px;
-}
-
-.user_menu {
-  display: flex;
-}
-
-%li.user_menu_new_group {
-  padding: 5px
-}
-// アイコンの距離を開けられない
-
-%i.fa{
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
 .groups {
   height: calc(100vh - 100px);
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
-}
 
-.group__group-name {
-  font-size: 15px;
-  margin-bottom: 5px;
-}
+  &__group_name {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
 
-.group__latest-message {
-  font-size: 11px;
+  &__group_latest_message {
+    font-size: 11px;
+  }
 }
