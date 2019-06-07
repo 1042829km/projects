@@ -7,44 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .flash_bar
-    .wrapper
-      .side_contents
-        .side_header
-          %p.side_header_user_name
-            gg
-          %ul.user_menu
-            %li.user_menu_edit_user
-              %a{ :href => '/groups/new'}
-                %i.fa.fa-edit
-            %li.user_menu_new_group
-              %a{ :href => '/users/729/edit'}
-                %i.fa.fa-cog
-        .groups
-          = render 'group'
-      .main_contents
-        .main_header
-          .current_group
-            .h2.current_group_name
-              dd
-            %ul.member_list
-              Member:
-              %li.member_list_member
-                gg
-          %a{ :href => "groups/1552/edit"}
-            .main_header_edit_btn
-              Edit
-        .messages
-          = render 'message'
-          = render 'message2'
-          = render 'message3'
-        .form
-          %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/1552/messages", :enctype => "multipart/form-data", :method => "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input{:name => "authenticity_token", :type => "hidden", :value => "tFhRzz4CfB4sGRZvfbLGg7kEsI3e64S0jl/G5tl+V4ecwzyTxilvW5XRDOgCgmxsQ6gH0FOlB5RWM6c5FV1TWA=="}/
-            .input-box
-              %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-              %label.image-label{:for => "message_image"}
-                %i.fa.fa-image
-                %input#message_image.image-label__input{:name => "message[image]", :type => "file"}/
-            %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+    
+    =yield
+
+    //yieldの具体的な使い方
