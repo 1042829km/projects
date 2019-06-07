@@ -9,7 +9,7 @@
           = link_to root_path do
             %i.fa.fa-edit
         %li.user_menu__new_group
-          = link_to ,root_path do
+          = link_to root_path do
             %i.fa.fa-cog
     .groups
       = render 'group'
@@ -22,7 +22,7 @@
           Member : 
           %li.current_group__member_list--member
             gg
-      %a{ href: "#"}
+      = link_to root_path do
         .current_group__main_header_edit_btn
           Edit
     .messages
