@@ -1,4 +1,3 @@
-.flash_bar
 .wrapper
   .side_contents
     .side_header
@@ -6,13 +5,19 @@
         = current_user.name
       %ul.side_header__user_menu
         %li.user_menu__edit_user
-          = link_to root_path do
+          = link_to new_group_path do
             %i.fa.fa-edit
         %li.user_menu__new_group
           = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
     .groups
-      = render 'group'
+      .group
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
   .main_contents
     .main_header
       .current_group
