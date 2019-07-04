@@ -4,26 +4,26 @@
     .main_header
       .current_group
         %h2.current_group__name
-          dd
+          = @group.name
         %ul.current_group__member_list
-          Member : 
+          Member:
           %li.current_group__member_list--member
-            gg
-      = link_to root_path do
+            - @group.users.each do |user| 
+              = user.name
+      = link_to edit_group_path(current_user) do
         .current_group__main_header_edit_btn
           Edit
     .messages
-      = render 'message'
-      = render 'message2'
-      = render 'message3'
+      = render @messages
     .form
-      %form.new-message{accept_charset: "UTF-8", action: "/groups/1552/messages", enctype: "multipart/form-data", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✓"}
-        %input{name: "authenticity_token", type: "hidden", value: "tFhRzz4CfB4sGRZvfbLGg7kEsI3e64S0jl/G5tl+V4ecwzyTxilvW5XRDOgCgmxsQ6gH0FOlB5RWM6c5FV1TWA=="}
+      = form_for [@group, @message] do |f|
         .input_box
-          %input.input_box__text{name: "message[content]", placeholder: "type a message", type: "text"}
-          %label.input_box__image_label{for: "message_image"}
+          = f.text_field :text, placeholder: "type a message" , class: "input_box__text" 
+          = f.label :image do
+            .input_box__image_label
             %i.input_box__image_label--fa.fa-image
-            %input.input_box__image_label--input{name: "message[image]", id: "message_image", type: "file"}
-        %input.input_box__new-message__submit-btn{data_disable_with: "Send", name: "commit", type: "submit", value: "Send"}
+            .input_box__image_label--input
+        = f.submit "Send", class: "input_box__new-message__submit-btn"
 
+//クラス名に応じてSCSSを当てている。form_forの時はどうやってクラスを持たせるのか？
+//form_forの記述をhamlで行う場合に、属性に属性値を持たせるための記述方法がわからない→自動で設定されない自分で設定する場合は:は右に。自動に任せる場合は左に書く
