@@ -108,11 +108,11 @@
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
     }
-
-    &--input {
-      display: none;
-    }
   }
+  &__input {
+    display: none;
+  }
+  
   &__new-message__submit-btn { 
     width: 100px;
     height: 50px;
