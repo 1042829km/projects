@@ -1,47 +1,40 @@
-// $(function(){
-//   $('#new_message').on('submit', function(e){
-//     e.preventDefault();
-//     var formData = new FormData(this);
-//   })
-// })
-
 $(function(){
   function buildHTML(message){
-    if (message.image) {
-      var html = `<div class="message">
-                    <div class="upper-message">
-                      <div class="upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="upper-message__date">
-                        ${message.created_at}
-                      </div>
-                      <div class="lower-message">
-                          <p class="loewr-message__content">
-                            ${message.text}
-                          </p>
-                        <img src="${message.image}", calss="lower-message__image">
-                      </div>
-                    </div>
-                  </div>`
-    } else {
-      var html = `<div class="message">
-                    <div class="upper-message">
-                      <div class="upper-message__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="upper-message__date">
-                        ${message.created_at}
-                      </div>
-                      <div class="lower-message">
-                          <p class="loewr-message__content">
-                            ${message.text}
-                          </p>
-                      </div>
-                    </div>
-                  </div>`
-    }
-    return html;
+    var html = (
+    (message.image) 
+    ? `<div class="message">
+      <div class="upper-message">
+        <div class="upper-message__user-name">
+          ${message.user_name}
+        </div>
+        <div class="upper-message__date">
+          ${message.created_at}
+        </div>
+        <div class="lower-message">
+            <p class="loewr-message__content">
+              ${message.text}
+            </p>
+          <img src="${message.image}", calss="lower-message__image">
+        </div>
+      </div>
+    </div>`
+    : `<div class="message">
+      <div class="upper-message">
+        <div class="upper-message__user-name">
+          ${message.user_name}
+        </div>
+        <div class="upper-message__date">
+          ${message.created_at}
+        </div>
+        <div class="lower-message">
+            <p class="loewr-message__content">
+              ${message.text}
+            </p>
+        </div>
+      </div>
+    </div>`
+    );
+  return html
   }
   
   $('.input_box__new-message__aubmit-btn').click(function() {
@@ -53,12 +46,9 @@ $(function(){
 
     $('#new_message').on('submit', function(e){
     e.preventDefault();
-    // var message = $('.input_box__text').val();
    
-
     var formData = new FormData(this);
     var url = $(this).attr('action')
-  
       $.ajax({
       url: url,
       type: 'POST',
@@ -67,9 +57,9 @@ $(function(){
       processData: false,
       contentType: false
     })
+    
     .done(function(data){
       var html = buildHTML(data);
-      
       $('.messages').append(html).animate({
         scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $('.input_box__text').val('');
