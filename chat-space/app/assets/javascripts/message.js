@@ -1,42 +1,28 @@
 $(function(){
   function buildHTML(message){
-    var html = (
-    (message.image) 
-    ? `<div class="message">
-      <div class="upper-message">
-        <div class="upper-message__user-name">
-          ${message.user_name}
-        </div>
-        <div class="upper-message__date">
-          ${message.created_at}
-        </div>
-        <div class="lower-message">
-            <p class="loewr-message__content">
-              ${message.text}
-            </p>
-          <img src="${message.image}", calss="lower-message__image">
-        </div>
-      </div>
-    </div>`
-    : `<div class="message">
-      <div class="upper-message">
-        <div class="upper-message__user-name">
-          ${message.user_name}
-        </div>
-        <div class="upper-message__date">
-          ${message.created_at}
-        </div>
-        <div class="lower-message">
-            <p class="loewr-message__content">
-              ${message.text}
-            </p>
-        </div>
-      </div>
-    </div>`
+    var image =(
+      (message.image)
+      ? `<img src="${message.image}", calss="lower-message__image">`
+      : ""
     );
-  return html
+    var html = `<div class="message">
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
+                      ${message.user_name}
+                    </div>
+                    <div class="upper-message__date">
+                      ${message.created_at}
+                    </div>
+                    <div class="lower-message">
+                        <p class="loewr-message__content">
+                          ${message.text}
+                        </p>
+                      ${image}
+                    </div>
+                  </div>
+                </div>`
+   return html
   }
-  
   $('.input_box__new-message__aubmit-btn').click(function() {
     $(this).click(function () {
     alert('只今処理中です。\nそのままお待ちください。');
@@ -62,9 +48,8 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html).animate({
         scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      $('.input_box__text').val('');
-      $('.input_box__input').val('');
       $('.input_box__new-message__submit-btn').prop( 'disabled', false );
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert('error');
