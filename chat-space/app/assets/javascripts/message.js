@@ -44,8 +44,8 @@ $(function(){
       contentType: false
     })
     
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(message){
+      var html = buildHTML(message);
       $('.messages').append(html).animate({
         scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $('.input_box__new-message__submit-btn').prop( 'disabled', false );
