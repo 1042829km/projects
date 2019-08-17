@@ -4,8 +4,9 @@ $(function() {
 
   function appendUser(user) {
     var html = `<li class="chat-group-user clearfix">
+                  <input name='group[user_ids][]' type='hidden' value='${ user.id }'>
                   <div class="chat-group-user__name">${ user.name }</div>
-                  <p class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="ユーザーのid" data-user-name="ユーザー名">
+                  <p class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name="${ user.name }">
                     追加
                   </p>
                 </li>`
