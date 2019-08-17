@@ -45,7 +45,7 @@ $(function() {
       }
       $(".user-search-result").on('click', '.chat-group-user', function() {
         $(this).children("p").html("削除").css('color', 'red');
-        var add_delite = $(this).appendTo(".chat-group-users")
+        $(this).appendTo(".chat-group-users")
       });
 
       $(".chat-group-users").on('click', '.chat-group-user', function() {
