@@ -1,7 +1,7 @@
 .wrapper 
   = render  'side'
   .main_contents
-    .main_header
+    .main_header{data: {'group_id' => @group.id}}
       .current_group
         %h2.current_group__name
           = @group.name

@@ -1,4 +1,6 @@
-.message
+.message{data: {'user_id' => message.id}}
+  %div{data: {'user_name' => message.user.name}}
+  %div{data: {'user_message' => message.text}}
   .upper-message
     .upper-message__user-name
       = message.user.name
