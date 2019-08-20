@@ -60,10 +60,8 @@ $(function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var last_message_id = $('.message').last().data('user-id');
-    console.log(last_message_id)
     var group_id = $('.main_header').data('group-id');
     var auto_updated_url = `/groups/${group_id}/api/messages`;
-    console.log(auto_updated_url)
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: auto_updated_url,
@@ -78,10 +76,8 @@ $(function(){
       //追加するHTMLの入れ物を作る
       // var insertHTML = ''
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-      console.log(messages)
       messages.forEach(function(message) {
         var html = buildHTML(message);
-        console.log(message)
         $('.messages').append(html).animate({
           scrollTop: $('.messages')[0].scrollHeight}, 'fast');;
         
