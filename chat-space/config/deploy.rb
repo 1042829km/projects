@@ -42,10 +42,10 @@ set :repo_url, "git@example.com:me/my_repo.git"
 lock '<3.11.0>'
 
 # Capistranoのログの表示に利用する
-set :application, '自身のアプリケーション名'
+set :application, 'chat-space'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:<Githubのユーザー名>/<レポジトリ名>.git'
+set :repo_url,  'git@github.com:1042829km/projects.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
@@ -54,8 +54,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
 
 # どの公開鍵を利用してデプロイするか
-set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/1042829KguKm.pem'] 
+set :ssh_options, auth_methods: ['publickey'],keys: ['~/.ssh/1042829KguKm.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
