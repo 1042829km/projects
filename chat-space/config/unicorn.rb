@@ -1,8 +1,8 @@
-app_path = File.expand_path('../../../../', __FILE__)
+app_path = File.expand_path('../../../../../', __FILE__)
 
 worker_processes 1
 # currentを指定
-working_directory "projects/#{app_path}/current"
+working_directory "projects/#{app_path}/current/chat-space"
 
 # それぞれ、sharedの中を参照するよう変更
 listen "projects/#{app_path}/shared/tmp/sockets/unicorn.sock"
