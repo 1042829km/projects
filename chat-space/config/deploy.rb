@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "3.11.0"
 
-set :application, "projects/chat-space"
+set :application, "projects_chat-space"
 set :repo_url,  'git@github.com:1042829km/projects.git'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
