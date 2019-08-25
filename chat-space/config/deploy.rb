@@ -7,7 +7,7 @@ set :repo_url,  'git@github.com:1042829km/projects.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/projects/chat-space"
+set :deploy_to, "/var/www/chat-space"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -50,10 +50,10 @@ set :rbenv_ruby, '2.3.1' #カリキュラム通りに進めた場合、2.5.1か2
 set :ssh_options, auth_methods: ['publickey'],keys: ['~/.ssh/1042829KguKm.pem'] 
 
 # プロセス番号を記載したファイルの場所
-set :unicorn_pid, -> { "projects/#{shared_path}/tmp/pids/unicorn.pid" }
+set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
 # Unicornの設定ファイルの場所
-set :unicorn_config_path, -> { "projects/#{current_path}/chat-space/config/unicorn.rb" }
+set :unicorn_config_path, -> { "#{current_path}/chat-space/config/unicorn.rb" }
 set :keep_releases, 5
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
