@@ -7,7 +7,7 @@ set :repo_url,  'git@github.com:1042829km/projects.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/chat-space"
+# set :deploy_to, "/var/www/chat-space"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -44,7 +44,7 @@ set :deploy_to, "/var/www/chat-space"
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :rbenv_type, :user
-set :rbenv_ruby, '2.3.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
+set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],keys: ['~/.ssh/1042829KguKm.pem'] 
