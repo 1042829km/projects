@@ -32,7 +32,8 @@ set :deploy_to, "/var/www/projects/chat-space"
 # set :local_user, -> { `git config user.name`.chomp }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+# set :keep_releases, 5 
+# releasesはデプロイしたファイルを世代管理している。そしてここの設定を変えることでどのくらいまで世代管理するか決める。デフォルトでは5担っている
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
@@ -53,7 +54,7 @@ set :ssh_options, auth_methods: ['publickey'],keys: ['~/.ssh/1042829AWS.pem']
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
 # Unicornの設定ファイルの場所
-set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :unicorn_config_path, -> { "#{current_path}/chat-space/config/unicorn.rb" }
 set :keep_releases, 5
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
