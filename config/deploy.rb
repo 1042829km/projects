@@ -2,12 +2,12 @@
 lock "3.11.0"
 
 set :application, "chat-space"
-set :repo_url,  'git@github.com:1042829km/projects.git'
+set :repo_url,  'git@github.com:1042829km/chat-space.git'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/projects/chat-space"
+set :deploy_to, "/var/www/chat-space"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
